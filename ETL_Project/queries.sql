@@ -1,9 +1,11 @@
+DROP table automation_probability if exists;
 CREATE TABLE automation_probability (
     SOC VARCHAR(10) primary key,
     Occupation VARCHAR(250),
     Probability FLOAT
 )
 
+DROP table occupational_employment_statistics if exists;
 CREATE TABLE occupational_employment_statistics (
     SOC VARCHAR(10) primary key,
     Occupational_Title VARCHAR(250),
@@ -17,3 +19,8 @@ SELECT automation_probability.SOC, automation_probability.Probability, automatio
 FROM automation_probability
 LEFT JOIN occupational_employment_statistics
 ON occupational_employment_statistics.SOC = automation_probability.SOC;
+
+
+SELECT * FROM automation_probability
+
+SELECT * FROM occupational_employment_statistics
